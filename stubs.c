@@ -2,6 +2,7 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <netdb.h>
+#include <stddef.h>
 
 #include "compat.h"
 
@@ -58,7 +59,7 @@ _public_ int sd_network_monitor_new(sd_network_monitor **m, const char *category
 }
 
 _public_ sd_network_monitor* sd_network_monitor_unref(sd_network_monitor *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_network_monitor_flush(sd_network_monitor *m) {
@@ -78,11 +79,11 @@ _public_ int sd_network_monitor_get_timeout(sd_network_monitor *m, uint64_t *tim
 }
 
 _public_ const char *sd_utf8_is_valid(const char *s) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char *sd_ascii_is_valid(const char *s) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_pid_get_session(pid_t pid, char **session) {
@@ -258,7 +259,7 @@ _public_ int sd_login_monitor_new(const char *category, sd_login_monitor **m) {
 }
 
 _public_ sd_login_monitor* sd_login_monitor_unref(sd_login_monitor *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_login_monitor_flush(sd_login_monitor *m) {
@@ -354,15 +355,14 @@ _public_ int sd_bus_open_system_container(sd_bus **ret, const char *machine) {
 }
 
 _public_ void sd_bus_close(sd_bus *bus) {
-	return -EINVAL;
 }
 
 _public_ sd_bus *sd_bus_ref(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus *sd_bus_unref(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_is_open(sd_bus *bus) {
@@ -438,23 +438,23 @@ _public_ int sd_bus_detach_event(sd_bus *bus) {
 }
 
 _public_ sd_event* sd_bus_get_event(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_message* sd_bus_get_current_message(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_slot* sd_bus_get_current_slot(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_message_handler_t sd_bus_get_current_handler(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void* sd_bus_get_current_userdata(sd_bus *bus) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_default_system(sd_bus **ret) {
@@ -518,7 +518,6 @@ _public_ int sd_bus_get_name_machine_id(sd_bus *bus, const char *name, sd_id128_
 }
 
 _public_ void sd_bus_error_free(sd_bus_error *e) {
-	return -EINVAL;
 }
 
 _public_ int sd_bus_error_set(sd_bus_error *e, const char *name, const char *message) {
@@ -618,11 +617,11 @@ _public_ int sd_bus_track_new(sd_bus *bus, sd_bus_track **track, sd_bus_track_ha
 }
 
 _public_ sd_bus_track* sd_bus_track_ref(sd_bus_track *track) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_track* sd_bus_track_unref(sd_bus_track *track) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_track_add_name(sd_bus_track *track, const char *name) {
@@ -638,15 +637,15 @@ _public_ unsigned sd_bus_track_count(sd_bus_track *track) {
 }
 
 _public_ const char* sd_bus_track_contains(sd_bus_track *track, const char *name) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char* sd_bus_track_first(sd_bus_track *track) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char* sd_bus_track_next(sd_bus_track *track) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_track_add_sender(sd_bus_track *track, sd_bus_message *m) {
@@ -658,47 +657,47 @@ _public_ int sd_bus_track_remove_sender(sd_bus_track *track, sd_bus_message *m) 
 }
 
 _public_ sd_bus* sd_bus_track_get_bus(sd_bus_track *track) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void *sd_bus_track_get_userdata(sd_bus_track *track) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void *sd_bus_track_set_userdata(sd_bus_track *track, void *userdata) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_slot* sd_bus_slot_ref(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_slot* sd_bus_slot_unref(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus* sd_bus_slot_get_bus(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void *sd_bus_slot_get_userdata(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void *sd_bus_slot_set_userdata(sd_bus_slot *slot, void *userdata) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_message *sd_bus_slot_get_current_message(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_message_handler_t sd_bus_slot_get_current_handler(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void* sd_bus_slot_get_current_userdata(sd_bus_slot *slot) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_add_object(sd_bus *bus, sd_bus_slot **slot, const char *path, sd_bus_message_handler_t callback, void *userdata) {
@@ -778,11 +777,11 @@ _public_ int sd_bus_message_new_method_errnof(sd_bus_message *call, sd_bus_messa
 }
 
 _public_ sd_bus_message* sd_bus_message_ref(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_message* sd_bus_message_unref(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_message_get_type(sd_bus_message *m, uint8_t *type) {
@@ -810,27 +809,27 @@ _public_ int sd_bus_message_get_allow_interactive_authorization(sd_bus_message *
 }
 
 _public_ const char *sd_bus_message_get_path(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char *sd_bus_message_get_interface(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char *sd_bus_message_get_member(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char *sd_bus_message_get_destination(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const char *sd_bus_message_get_sender(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ const sd_bus_error *sd_bus_message_get_error(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_message_get_monotonic_usec(sd_bus_message *m, uint64_t *usec) {
@@ -846,7 +845,7 @@ _public_ int sd_bus_message_get_seqnum(sd_bus_message *m, uint64_t *seqnum) {
 }
 
 _public_ sd_bus_creds *sd_bus_message_get_creds(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_message_is_signal(sd_bus_message *m, const char *interface, const char *member) {
@@ -970,7 +969,7 @@ _public_ int sd_bus_message_get_errno(sd_bus_message *m) {
 }
 
 _public_ const char* sd_bus_message_get_signature(sd_bus_message *m, int complete) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_message_copy(sd_bus_message *m, sd_bus_message *source, int all) {
@@ -982,7 +981,7 @@ _public_ int sd_bus_message_verify_type(sd_bus_message *m, char type, const char
 }
 
 _public_ sd_bus *sd_bus_message_get_bus(sd_bus_message *m) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_bus_message_get_priority(sd_bus_message *m, int64_t *priority) {
@@ -994,11 +993,11 @@ _public_ int sd_bus_message_set_priority(sd_bus_message *m, int64_t priority) {
 }
 
 _public_ sd_bus_creds *sd_bus_creds_ref(sd_bus_creds *c) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_bus_creds *sd_bus_creds_unref(sd_bus_creds *c) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ uint64_t sd_bus_creds_get_mask(const sd_bus_creds *c) {
@@ -1174,11 +1173,11 @@ _public_ int sd_resolve_get_tid(sd_resolve *resolve, pid_t *tid) {
 }
 
 _public_ sd_resolve* sd_resolve_ref(sd_resolve *resolve) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_resolve* sd_resolve_unref(sd_resolve *resolve) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_resolve_get_fd(sd_resolve *resolve) {
@@ -1218,11 +1217,11 @@ _public_ int sd_resolve_res_search(sd_resolve *resolve, sd_resolve_query** q, co
 }
 
 _public_ sd_resolve_query* sd_resolve_query_ref(sd_resolve_query *q) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_resolve_query* sd_resolve_query_unref(sd_resolve_query* q) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_resolve_query_is_done(sd_resolve_query *q) {
@@ -1230,15 +1229,15 @@ _public_ int sd_resolve_query_is_done(sd_resolve_query *q) {
 }
 
 _public_ void* sd_resolve_query_set_userdata(sd_resolve_query *q, void *userdata) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void* sd_resolve_query_get_userdata(sd_resolve_query *q) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_resolve *sd_resolve_query_get_resolve(sd_resolve_query *q) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_resolve_attach_event(sd_resolve *resolve, sd_event *event, int priority) {
@@ -1250,11 +1249,11 @@ _public_ int sd_resolve_detach_event(sd_resolve *resolve) {
 }
 
 _public_ sd_event *sd_resolve_get_event(sd_resolve *resolve) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ char *sd_id128_to_string(sd_id128_t id, char s[33]) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_id128_from_string(const char s[], sd_id128_t *ret) {
@@ -1286,11 +1285,11 @@ _public_ int sd_event_new(sd_event** ret) {
 }
 
 _public_ sd_event* sd_event_ref(sd_event *e) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_event* sd_event_unref(sd_event *e) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_event_add_io(sd_event *e, sd_event_source **s, int fd, uint32_t events, sd_event_io_handler_t callback, void *userdata) {
@@ -1322,11 +1321,11 @@ _public_ int sd_event_add_exit(sd_event *e, sd_event_source **s, sd_event_handle
 }
 
 _public_ sd_event_source* sd_event_source_ref(sd_event_source *s) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ sd_event_source* sd_event_source_unref(sd_event_source *s) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_event_source_set_name(sd_event_source *s, const char *name) {
@@ -1338,7 +1337,7 @@ _public_ int sd_event_source_get_name(sd_event_source *s, const char **name) {
 }
 
 _public_ sd_event *sd_event_source_get_event(sd_event_source *s) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_event_source_get_pending(sd_event_source *s) {
@@ -1414,11 +1413,11 @@ _public_ int sd_event_source_set_prepare(sd_event_source *s, sd_event_handler_t 
 }
 
 _public_ void* sd_event_source_get_userdata(sd_event_source *s) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ void *sd_event_source_set_userdata(sd_event_source *s, void *userdata) {
-	return -EINVAL;
+	return NULL;
 }
 
 _public_ int sd_event_prepare(sd_event *e) {
